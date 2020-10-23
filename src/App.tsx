@@ -3,6 +3,7 @@ import {
   HashRouter as Router,
   Switch,
   Route,
+  // eslint-disable-next-line
   Link,
   Redirect
 } from "react-router-dom";
