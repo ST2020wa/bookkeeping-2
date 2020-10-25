@@ -4,6 +4,7 @@ import {Link, NavLink} from 'react-router-dom';
 import Icon from './icon';
 
 const NavWrapper = styled.nav`
+background: #FFFFFF;
 line-height: 24px;
 box-shadow: 0 0 3px rgba(0,0,0,0.25) ;
 > ul {
@@ -39,19 +40,19 @@ const Nav = ()=>{
                     <li>
                         <NavLink to="/tags" activeClassName="selected">
                             <Icon  name='tag'/>
-                            标签
+                            TAG
                         </NavLink>
                     </li>
                     <li>
                         <NavLink to="/money" activeClassName="selected">
                             <Icon  name='money'/>
-                            记账
+                            MONEY
                         </NavLink>
                     </li>
                     <li>
                         <NavLink to="/statistics" activeClassName="selected">
                             <Icon  name='chart'/>
-                            统计
+                            CHART
                         </NavLink>
                     </li>
                 </ul>

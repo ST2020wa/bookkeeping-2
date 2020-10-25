@@ -18,9 +18,47 @@ background: #FFFFFF; padding: 12px 16px;
   }
 `
 
-const NotesSection = styled.section ``
+const NotesSection = styled.section `
+  background: #f5f5f5;
+  padding: 0 16px;
+  font-size: 14px;
+  > label {
+    display:flex;
+    align-items: center;
+    > span { margin-right: 16px; white-space: nowrap;}
+    > input {
+      display:block;
+      width: 100%;
+      height: 72px;
+      background: none;
+      border: none;
+    }
+  }
+`
 
-const CategorySection = styled.section ``
+const CategorySection = styled.section `
+  font-size: 24px;
+  > ul{
+    display:flex;
+    background: #C4C4C4;
+    > li {
+      width: 50%;
+      text-align: center;
+      padding: 16px 0;
+      position: relative;
+      &.selected::after{
+        content: '';
+        display: block;
+        height: 3px;
+        background: #333;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        left: 0;
+      }
+    }
+  }
+`
 
 const NumberPadSection = styled.section ``
 
@@ -43,12 +81,12 @@ function Money() {
             <NotesSection>
                 <label>
                     <span>Notes</span>
-                    <input type="text"/>
+                    <input type="text" placeholder="type note here"/>
                 </label>
             </NotesSection>
             <CategorySection>
                 <ul>
-                    <li>outcome</li>
+                    <li className="selected">outcome</li>
                     <li>income</li>
                 </ul>
             </CategorySection>
