@@ -16,15 +16,7 @@ function Money() {
     return(
         <MyLayout>
             <TagsSection>
-                <ol>
-                    <li>cloth</li>
-                    <li>food</li>
-                    <li>housing</li>
-                    <li>transport</li>
-                </ol>
-                <button>
-                    create new tag
-                </button>
+
             </TagsSection>
             <NotesSection>
                 <label>
