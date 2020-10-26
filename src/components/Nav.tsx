@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import React from 'react';
-// eslint-disable-next-line
-import {Link, NavLink} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import Icon from './icon';
 
 const NavWrapper = styled.nav`
