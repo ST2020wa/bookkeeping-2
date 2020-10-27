@@ -27,32 +27,47 @@ const InputWrapper = styled.div`
 `
 
 const Tag: React.FC = () => {
-    const {findTag, updateTag} = useTags()
+    const {findTag, updateTag, deleteTag} = useTags()
     let { id:idString } = useParams<Params>();
     const tag = findTag(parseInt(idString));
-    return (
-        <Layout>
-            <Topbar>
-                <Icon name="left" />
-                <span>Edit Tag</span>
-                <Icon />
-            </Topbar>
+    const tagContent =(tag: {id:number; name:string})=> (
+        <div>
             <InputWrapper>
                 <Input label="Tag Name" type="text" placeholder="tag name"
                        value={tag.name}
-                       onChange={(e)=> {
+                       onChange={(e) => {
                            updateTag(tag.id, {name: e.target.value});
                        }}
                 />
             </InputWrapper>
             <Center>
-                <Space />
-                <Space />
-                <Space />
-                <Button>Delete Tag</Button>
+                <Space/>
+                <Space/>
+                <Space/>
+                <Button onClick={() => deleteTag(tag.id)}>Delete Tag</Button>
             </ Center>
-        </Layout>
+        </div>
     )
+
+        return (
+            <Layout>
+                <Topbar>
+                    <Icon name="left"/>
+                    <span>Edit Tag</span>
+                    <Icon/>
+                </Topbar>
+                {tag ?  tagContent(tag) : <Center> Oops! tag does not exist~ </Center>
+
+                }
+            </Layout>
+        )
+
+        return (
+            <div>
+                Tag does not exist!
+            </div>
+        )
+
 }
 
 export {Tag}
