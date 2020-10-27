@@ -1,7 +1,7 @@
 import {useState} from 'react';
 
 const useTags = () => {
-    const [tags, setTags] = useState<string[]>(['cloth', 'food', 'housing', 'transport']);
+    const [tags, setTags] = useState<string[]>(['Cloth', 'Food', 'Housing', 'Transport']);
     return {tags, setTags};
 };
 
