@@ -5,9 +5,9 @@ import Layout from 'components/Layout';
 import Icon from 'components/icon';
 import {Button} from 'components/Button';
 import styled from 'styled-components';
-import {Input} from '../components/Input';
-import {Center} from '../components/Center';
-import {Space} from '../components/Space';
+import {Input} from 'components/Input';
+import {Center} from 'components/Center';
+import {Space} from 'components/Space';
 
 type Params = {
     id: string
@@ -26,7 +26,7 @@ const InputWrapper = styled.div`
   margin-top: 8px;
 `
 
-const Tag: React.FC = (props) => {
+const Tag: React.FC = () => {
     const {findTag} = useTags()
     let { id } = useParams<Params>();
     const tag = findTag(parseInt(id));
@@ -38,7 +38,7 @@ const Tag: React.FC = (props) => {
                 <Icon />
             </Topbar>
             <InputWrapper>
-                <Input label="Tag Name" type="text" placeholder="tag name" />
+                <Input label="Tag Name" type="text" placeholder="tag name" value={tag.name} />
             </InputWrapper>
             <Center>
                 <Space />
