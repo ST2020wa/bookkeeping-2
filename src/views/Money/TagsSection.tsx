@@ -10,7 +10,7 @@ justify-content: flex-end; align-items: flex-start;
   >ol { margin: 0 -12px;
   > li{
     background: #D9D9D9; border-radius: 18px;
-    display:inline-block; padding: 3px 18px;
+    display:inline-block; padding: 3px 12px;
     font-size: 14px; margin: 8px 6px;
     &.selected{
       background: #696969;
