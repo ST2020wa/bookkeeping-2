@@ -26,7 +26,7 @@ const TagList = styled.ol`
 `;
 
 function Tags() {
-    const {tags} = useTags()  //  useState
+    const {tags, addTag} = useTags()  //  useState
     return (
         <Layout>
             <TagList>
@@ -41,7 +41,7 @@ function Tags() {
             </TagList>
             <Center>
                 <Space />
-                <Button>New Tag</Button>
+                <Button onClick={addTag}>New Tag</Button>
             </Center>
         </Layout>
     );

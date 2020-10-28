@@ -1,14 +1,24 @@
-import {useState} from 'react';
+import {useEffect, useRef, useState} from 'react';
 import {createId} from './lib/createId';
-
-const defaultTags = [
-    {id: createId(), name:'Cloth'},
-    {id: createId(), name:'Food'},
-    {id: createId(), name:'Housing'},
-    {id: createId(), name:'Transport'}];
+import {useUpdate} from './hooks/useUpdate';
 
 const useTags = () => {
-    const [tags, setTags] = useState<{id:number; name:string}[]>(defaultTags);
+    const [tags, setTags] = useState<{id:number; name:string}[]>([]);
+    useEffect( ()=>{
+        let localTags = JSON.parse(window.localStorage.getItem('tags') || '[]')
+        if(localTags.length === 0){
+            localTags = [
+                {id: createId(), name:'Cloth'},
+                {id: createId(), name:'Food'},
+                {id: createId(), name:'Housing'},
+                {id: createId(), name:'Transport'}
+          ];
+        }
+        setTags(localTags)
+    }, []);
+    useUpdate(()=>{
+        window.localStorage.setItem('tags', JSON.stringify(tags))
+    }, [tags])
     const findTag = (id:number) => tags.filter(tag => tag.id === id)[0];
     const findTagIndex = (id: number) => {
         let result = -1
@@ -20,28 +30,19 @@ const useTags = () => {
         }
         return result;
     }
-    const updateTag = (id: number, obj: { name:string }) => {
-        //  获取要改的 tag 的下标
-        const index = findTagIndex(id);
-        //  深拷贝 tags 得到 tagsClone
-        const tagsClone = JSON.parse(JSON.stringify(tags));
-        //  把 tagsClone 的第 index 删掉，换成 {id:id, name: obj.name}
-        tagsClone.splice(index, 1, {id: id, name: obj.name});
-        setTags(tagsClone);  //  不可变数据 tags, newTags
-    }; //  obj = {name: 2}
-
+    const updateTag = (id: number, {name} : { name:string }) => {
+        setTags(tags.map(tag => tag.id === id ? {id, name: name} : tag));
+    };
     const deleteTag = (id: number) => {
-        //  获取要删的 tag 的下标
-        const index = findTagIndex(id);
-        //  深拷贝 tags 得到 tagsClone
-        const tagsClone = JSON.parse(JSON.stringify(tags));
-        //  把 tagsClone 的第 index 删掉
-        tagsClone.splice(index, 1);
-        setTags(tagsClone)
-
-    }
-
-    return {tags, setTags, findTag, updateTag, findTagIndex, deleteTag};
+        setTags(tags.filter(tag => tag.id !== id))
+    };
+    const addTag = () => {
+        const tagName= window.prompt('new tag name is');
+        if(tagName !== null && tagName !== ''){
+            setTags([...tags, {id: createId(), name: tagName}])
+        }
+    };
+    return {tags, setTags, findTag, updateTag, findTagIndex, deleteTag, addTag};
 };
 
 

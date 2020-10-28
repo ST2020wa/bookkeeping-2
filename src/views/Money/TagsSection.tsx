@@ -30,14 +30,9 @@ type Props = {
     onChange: (selected: number[]) => void;
 }
 const TagsSection: React.FC<Props> = (props) => {
-    const {tags, setTags} = useTags()  //  useState
+    const {tags, addTag} = useTags()  //  useState
     const selectedTagIds = props.value;
-    const onAddTag = () => {
-        const tagName= window.prompt('new tag name is');
-        if(tagName !== null){
-            setTags([...tags, {id: createId(), name: tagName}])
-        }
-    };
+
     const onToggleTag = (tagId: number) => {
         const index = selectedTagIds.indexOf(tagId);
         if(index >= 0){
@@ -56,7 +51,9 @@ const TagsSection: React.FC<Props> = (props) => {
                 } className={getClass(tag.id)}>{tag.name}</li>
                 )}
             </ol>
-            <button onClick={onAddTag}>
+            <button onClick={ () => {
+                addTag();
+            }}>
                 create new tag
             </button>
         </Wrapper>
