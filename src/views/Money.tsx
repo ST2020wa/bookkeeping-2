@@ -1,5 +1,5 @@
 import Layout from '../components/Layout';
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 import {TagsSection} from './Money/TagsSection';
 import {NoteSection} from './Money/NoteSection';
@@ -28,7 +28,7 @@ const CategoryWrapper = styled.div`
 
 function Money() {
     const [selected, setSelected] = useState(defaultFormData);
-    const {records, addRecord} = useRecords();
+    const {addRecord} = useRecords();
     const onChange = (obj: Partial<typeof selected>) => {
         setSelected({...selected, ...obj});
     };

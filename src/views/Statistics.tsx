@@ -37,7 +37,7 @@ function Statistics() {
     const hash: { [K: string]: RecordItem[] } = {};  //  {'2020-05-11': [item, item], '2020-05-12': [item, item]}
     const selectedRecords = records.filter(r => r.category === category);
 
-    selectedRecords.map(r => {
+    selectedRecords.forEach(r => {
         const key = day(r.createdAt).format('MM/DD/YYYY');
         if (!(key in hash)) {
             hash[key] = [];
