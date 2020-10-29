@@ -1,6 +1,7 @@
 {
   "name": "bookkeeping-2",
   "version": "0.1.0",
+  "homepage": "http://ST2020wa.github.io/bookkeeping-2-website/",
   "private": true,
   "dependencies": {
     "@babel/core": "7.9.0",
