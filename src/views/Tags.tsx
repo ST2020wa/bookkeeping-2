@@ -41,7 +41,7 @@ function Tags() {
             </TagList>
             <Center>
                 <Space />
-                <Button onClick={addTag}>New Tag</Button>
+                <Button onClick={addTag}>新建标签</Button>
             </Center>
         </Layout>
     );

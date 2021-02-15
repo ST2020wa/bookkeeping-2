@@ -29,7 +29,7 @@ type Props = {
     onChange: (value: '-' | '+') => void
 }
 const CategorySection: React.FC<Props> = (props) => {
-    const categoryMap = {'-':'outcome', '+':'income'}
+    const categoryMap = {'-':'支出', '+':'收入'}
     type Keys = keyof typeof categoryMap
     const [categoryList] = useState<Keys[]>(['-', '+'])
     const category = props.value

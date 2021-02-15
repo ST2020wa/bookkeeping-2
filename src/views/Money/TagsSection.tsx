@@ -51,7 +51,7 @@ const TagsSection: React.FC<Props> = (props) => {
                 )}
             </ol>
             <button onClick={addTag}>
-                create new tag
+                新增分类
             </button>
         </Wrapper>
     );

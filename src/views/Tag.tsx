@@ -33,7 +33,7 @@ const Tag: React.FC = () => {
     const tagContent =(tag: {id:number; name:string})=> (
         <div>
             <InputWrapper>
-                <Input label="Tag Name" type="text" placeholder="tag name"
+                <Input label="标签名" type="text" placeholder="tag name"
                        value={tag.name}
                        onChange={(e) => {
                            updateTag(tag.id, {name: e.target.value});
@@ -44,7 +44,7 @@ const Tag: React.FC = () => {
                 <Space/>
                 <Space/>
                 <Space/>
-                <Button onClick={() => deleteTag(tag.id)}>Delete Tag</Button>
+                <Button onClick={() => deleteTag(tag.id)}>删除标签</Button>
             </ Center>
         </div>
     )
@@ -57,11 +57,10 @@ const Tag: React.FC = () => {
             <Layout>
                 <Topbar>
                     <Icon name="left" onClick={onClickBack}/>
-                    <span>Edit Tag</span>
+                    <span>编辑标签</span>
                     <Icon/>
                 </Topbar>
                 {tag ?  tagContent(tag) : <Center> Oops! tag does not exist~ </Center>
-
                 }
             </Layout>
         )
