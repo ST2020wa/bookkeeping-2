@@ -8,18 +8,19 @@ flex-grow: 1; display:flex; flex-direction: column;
 justify-content: flex-end; align-items: flex-start;
   >ol { margin: 0 -12px;
   > li{
-    background: #D9D9D9; border-radius: 18px;
+    background: #f3f2f2; border-radius: 18px;
     display:inline-block; padding: 3px 12px;
     font-size: 14px; margin: 8px 6px;
+    cursor: cell;
     &.selected{
-      background: #696969;
-      color:#FFFFFF;
+      background: #7c54ff;
+      color:white;
     }
     }
   }
   > button{
     background: none; border: none; padding: 2px 4px;
-    border-bottom: 1px solid #333; color: #666;
+    border-bottom: 1px solid #cfc3f5; color: #cfc3f5;
     margin-top: 8px;
   }
 `;
