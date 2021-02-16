@@ -4,9 +4,10 @@ import {NavLink} from 'react-router-dom';
 import Icon from './icon';
 
 const NavWrapper = styled.nav`
-background: #FFFFFF;
+background: #f4f4f4;
 line-height: 24px;
 box-shadow: 0 0 3px rgba(0,0,0,0.25) ;
+font-size: 14px;
 > ul {
   display: flex;
   > li{
@@ -23,9 +24,9 @@ box-shadow: 0 0 3px rgba(0,0,0,0.25) ;
        height: 24px;
       }
       &.selected{
-        color: brown;
+        color: #7c54ff;
         .icon{
-        fill: brown;
+        fill: #7c54ff;
         }
       }
     }

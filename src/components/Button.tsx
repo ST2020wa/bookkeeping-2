@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 const Button = styled.button`
-  font-size: 18px; border: none; padding: 8px 12px;
-  background: #767676; border-radius: 4px; color: #ffffff
+  font-size: 16px; border: none; padding: 12px 16px;
+  background: #7c54ff; border-radius: 40px; color: white
   
 `;
 

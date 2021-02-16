@@ -60,7 +60,7 @@ const Tag: React.FC = () => {
                     <span>编辑标签</span>
                     <Icon/>
                 </Topbar>
-                {tag ?  tagContent(tag) : <Center> Oops! tag does not exist~ </Center>
+                {tag ?  tagContent(tag) : <Center> Oops! 标签不存在~ </Center>
                 }
             </Layout>
         )

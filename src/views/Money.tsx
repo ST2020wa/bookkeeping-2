@@ -34,7 +34,7 @@ function Money() {
     };
     const submit = () => {
         if (addRecord(selected)) {
-            alert('successfully saved ^_^');
+            alert('保存成功～^_^');
             setSelected(defaultFormData);
         }
     };

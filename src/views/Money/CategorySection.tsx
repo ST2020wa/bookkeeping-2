@@ -5,20 +5,24 @@ const Wrapper = styled.section`
   font-size: 24px;
   > ul{
     display:flex;
+    background: #f4f4f4;
     > li {
+      font-size: 20px;
       width: 50%;
       text-align: center;
-      padding: 16px 0;
+      padding: 10px 0;
       position: relative;
       &.selected::after{
         content: '';
         display: block;
-        height: 3px;
-        background: #333;
+        height: 100%;
+        background: rgba(124, 84, 255, 20%);
         position: absolute;
         bottom: 0;
         width: 100%;
         left: 0;
+        border-radius: 50px;
+        font-weight: 600;
       }
     }
   }

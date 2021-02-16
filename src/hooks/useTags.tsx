@@ -37,7 +37,7 @@ const useTags = () => {
         setTags(tags.filter(tag => tag.id !== id));
     };
     const addTag = () => {
-        const tagName = window.prompt('new tag name is');
+        const tagName = window.prompt('请输入新建标签名');
         if (tagName !== null && tagName !== '') {
             setTags([...tags, {id: createId(), name: tagName}]);
         }
