@@ -29,7 +29,7 @@ const NumberPadSection: React.FC<Props> = (props)=> {
         if(text === 'OK'){
             if(props.onOk) {props.onOk();}
             return;}
-        if('0123456789.'.split('').concat(['Backspace', 'Clear']).indexOf(text)>=0){
+        if('0123456789.'.split('').concat(['⟵', 'C']).indexOf(text)>=0){
             setOutput(generateOutput(text, output));
         }
     };
